@@ -6,6 +6,8 @@ import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { BlogPost } from '@/app/lib/blog-data'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:8085'
 
@@ -77,7 +79,7 @@ export default async function BlogPostPage({
                         </div>
 
                         <div className="prose prose-neutral dark:prose-invert max-w-none">
-                            {post.content.split('\n\n').map((paragraph, index) => {
+                            {/* {post.content.split('\n\n').map((paragraph, index) => {
                                 if (paragraph.startsWith('## ')) {
                                     return (
                                         <h2 key={index} className="text-2xl font-bold mt-12 mb-4">
@@ -93,7 +95,28 @@ export default async function BlogPostPage({
                                         {paragraph}
                                     </p>
                                 )
-                            })}
+                            })} */}
+
+                            <div className="prose prose-neutral dark:prose-invert max-w-none">
+                                <ReactMarkdown
+                                    remarkPlugins={[remarkGfm]}
+                                    components={{
+                                        h2: ({ node, ...props }) => (
+                                            <h2 className="text-2xl font-bold mt-12 mb-4" {...props} />
+                                        ),
+                                        h3: ({ node, ...props }) => (
+                                            <h3 className="text-xl font-semibold mt-8 mb-3" {...props} />
+                                        ),
+                                        p: ({ node, ...props }) => (
+                                            <p className="leading-relaxed mb-4 text-muted-foreground" {...props} />
+                                        ),
+                                        li: ({ node, ...props }) => <li className="mb-1" {...props} />,
+                                    }}
+                                >
+                                    {post.content}
+                                </ReactMarkdown>
+                            </div>
+
                         </div>
                     </article>
                 </div>
