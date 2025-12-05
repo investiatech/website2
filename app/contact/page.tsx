@@ -10,7 +10,24 @@ export default function ContactPage() {
         <>
             <Header />
             <main className="min-h-screen">
-                <section className="py-24 md:py-32">
+                {/* Hero Section */}
+                <section className="container mx-auto px-4 py-24 md:py-32">
+                    <div className="max-w-4xl mx-auto text-center">
+                        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-balance">
+                            Skontaktuj się z {' '}
+                            <br />
+                            <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 via-blue-600 to-blue-800">
+                                Investia.Tech
+                            </span>
+                        </h1>
+                        <p className="text-xl text-muted-foreground leading-relaxed mb-8 text-pretty">
+                            Napisz do nas, jeśli szukasz partnera w obszarze AI, quantum computingu
+                            lub zaawansowanej analityki dla sektora finansowego. Odpowiadamy zwykle w ciągu 24 godzin.
+                        </p>
+                    </div>
+                </section>
+
+                <section className="py-24 md:py-32 border-t border-border">
                     <div className="container mx-auto px-4">
                         <div className="max-w-6xl mx-auto">
                             <div className="grid md:grid-cols-2 gap-12">
@@ -103,11 +120,11 @@ export default function ContactPage() {
                                             <div>
                                                 <h3 className="font-medium mb-1">Email</h3>
                                                 <p className="text-sm text-muted-foreground">
-                                                    kontakt@investia.tech
+                                                    office@investia.tech
                                                 </p>
-                                                <p className="text-sm text-muted-foreground">
+                                                {/* <p className="text-sm text-muted-foreground">
                                                     projekty@investia.tech
-                                                </p>
+                                                </p> */}
                                             </div>
                                         </div>
 
@@ -118,7 +135,7 @@ export default function ContactPage() {
                                             <div>
                                                 <h3 className="font-medium mb-1">Telefon</h3>
                                                 <p className="text-sm text-muted-foreground">
-                                                    +48 123 456 789
+                                                    +48 723857770
                                                 </p>
                                                 <p className="text-sm text-muted-foreground">
                                                     Pon-Pt: 9:00 - 18:00
@@ -133,10 +150,10 @@ export default function ContactPage() {
                                             <div>
                                                 <h3 className="font-medium mb-1">Adres</h3>
                                                 <p className="text-sm text-muted-foreground">
-                                                    ul. Przykładowa 123
+                                                    ul. Chmielna 2 / 31
                                                 </p>
                                                 <p className="text-sm text-muted-foreground">
-                                                    00-001 Warszawa, Polska
+                                                    00-020 Warszawa, Polska
                                                 </p>
                                             </div>
                                         </div>

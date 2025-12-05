@@ -6,7 +6,7 @@ import { BlogCard } from '@/components/blog-card'
 
 import { Button } from '@/components/ui/button'
 import { useState, useMemo, useEffect } from 'react'
-import { Calendar, Code, Lightbulb, TrendingUp, Zap } from 'lucide-react'
+import { Calendar, Code, Lightbulb, TrendingUp, Video, Zap } from 'lucide-react'
 import { Input } from '@/components/ui/input'
 import { BlogPost } from '../lib/blog-data'
 
@@ -128,6 +128,14 @@ export default function BlogPage() {
                 {/* Main Content */}
                 <section className="py-12 md:py-16 border-t border-border bg-muted/30">
                     <div className="container mx-auto px-4">
+
+                        <div className="flex items-center gap-3 mb-8">
+                            <Lightbulb className="h-6 w-6 text-primary" />
+                            <h1 className="text-3xl font-bold">Artykuły, wiedza i inspiracje</h1>
+                        </div>
+                        <p className="text-muted-foreground mb-12 max-w-2xl">
+                            Praktyczne analizy, trendy technologiczne i wskazówki, które pomogą Ci podejmować lepsze decyzje w świecie finansów i AI.
+                        </p>
 
                         {loading && (
                             <div className="text-center py-12">

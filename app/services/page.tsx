@@ -28,7 +28,7 @@ export default function ServicesOverviewPage() {
                         <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-balance">
                             Budujemy inteligentne rozwiązania
                             <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-600 to-blue-800">
+                            <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 via-blue-600 to-blue-800">
                                 dla świata finansów
                             </span>
                         </h1>

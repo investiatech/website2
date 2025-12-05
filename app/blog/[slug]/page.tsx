@@ -79,24 +79,6 @@ export default async function BlogPostPage({
                         </div>
 
                         <div className="prose prose-neutral dark:prose-invert max-w-none">
-                            {/* {post.content.split('\n\n').map((paragraph, index) => {
-                                if (paragraph.startsWith('## ')) {
-                                    return (
-                                        <h2 key={index} className="text-2xl font-bold mt-12 mb-4">
-                                            {paragraph.replace('## ', '')}
-                                        </h2>
-                                    )
-                                }
-                                return (
-                                    <p
-                                        key={index}
-                                        className="leading-relaxed mb-6 text-muted-foreground"
-                                    >
-                                        {paragraph}
-                                    </p>
-                                )
-                            })} */}
-
                             <div className="prose prose-neutral dark:prose-invert max-w-none">
                                 <ReactMarkdown
                                     remarkPlugins={[remarkGfm]}
@@ -116,8 +98,8 @@ export default async function BlogPostPage({
                                     {post.content}
                                 </ReactMarkdown>
                             </div>
-
                         </div>
+
                     </article>
                 </div>
             </main>

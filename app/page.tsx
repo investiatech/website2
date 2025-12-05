@@ -1,3 +1,4 @@
+'use client'
 
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -7,8 +8,19 @@ import Image from 'next/image'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
 import { Textarea } from '@/components/ui/textarea'
+import { subscribeToNewsletter } from './lib/newsletter'
+
+async function handleNewsletterSubmit(e: React.FormEvent<HTMLFormElement>) {
+  e.preventDefault();
+  const form = e.currentTarget;
+  const email = (form.elements.namedItem("email") as HTMLInputElement).value;
+
+  await subscribeToNewsletter(email);
+}
+
 
 export default function Home() {
+    const { toast } = useToast();
   return (
     <>
       <Header />
@@ -29,7 +41,7 @@ export default function Home() {
             <div>
               <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-10 text-balance">
                 Projektujemy algorytmy dla{' '}
-                <span className='text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-blue-800'>nowoczesnych finansów</span> 
+                <span className='text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-blue-800'>nowoczesnych finansów</span>
               </h1>
 
               <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed text-pretty">
@@ -255,8 +267,8 @@ export default function Home() {
                       </div>
                       <h4 className="text-xl font-bold mb-2 text-foreground">Quantum optimization</h4>
                       <p className="text-muted-foreground max-w-md">
-                        Obliczenia kwantowe analizują miliardy kombinacji w minuty.
-                        Optymalizacja portfela uwzględniająca setki zmiennych.
+                        Obliczenia z technologią AI i Quantum analizują miliardy kombinacji w minuty.
+                        Optymalizacja inwestycji uwzględniająca setki zmiennych.
                       </p>
                     </div>
 
@@ -964,8 +976,10 @@ export default function Home() {
                 </p>
               </div>
 
-              <form className="flex flex-col sm:flex-row gap-3">
+              {/* <form className="flex flex-col sm:flex-row gap-3"> */}
+              <form className="flex flex-col sm:flex-row gap-3" onSubmit={handleNewsletterSubmit}>
                 <Input
+                  name="email"
                   type="email"
                   placeholder="twoj.email@example.com"
                   className="flex-1"

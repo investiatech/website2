@@ -24,6 +24,9 @@ export function Header() {
           <Link href="/" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
             Start
           </Link>
+          <Link href="/services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            Usługi
+          </Link>
           <Link href="/blog" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
             Artykuły
           </Link>
@@ -33,7 +36,7 @@ export function Header() {
           <Link href="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
             O nas
           </Link>
-          <Link href="#kontakt" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+          <Link href="/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
             Kontakt
           </Link>
         </div>
@@ -56,35 +59,42 @@ export function Header() {
                 className="text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded-md transition-colors py-2 px-4"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                START
+                Start
+              </Link>
+              <Link
+                href="/services"
+                className="text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded-md transition-colors py-2 px-4"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Usługi
               </Link>
               <Link
                 href="/blog"
                 className="text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded-md transition-colors py-2 px-4"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                ARTYKUŁY
+                Artykuły
               </Link>
               <Link
                 href="/webinars"
                 className="text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded-md transition-colors py-2 px-4"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                BLOG
+                Webinary
               </Link>
               <Link
                 href="/about"
                 className="text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded-md transition-colors py-2 px-4"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                O NAS
+                O nas
               </Link>
               <Link
-                href="#kontakt"
+                href="/contact"
                 className="text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded-md transition-colors py-2 px-4"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                KONTAKT
+                Kontakt
               </Link>
             </div>
           </div>
