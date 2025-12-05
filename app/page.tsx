@@ -8,43 +8,45 @@ import Image from 'next/image'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
 import { Textarea } from '@/components/ui/textarea'
-import { subscribeToNewsletter } from './lib/newsletter'
+import { subscribeToNewsletter } from './lib/subscribeToNewsletter'
 import { toast } from 'sonner'
+import { handleContactSubmit } from './lib/handleContactSubmit'
+import { handleNewsletterSubmit } from './lib/handleNewsletterSubmit'
 
-async function handleNewsletterSubmit(e: React.FormEvent<HTMLFormElement>) {
-  e.preventDefault();
+// async function handleNewsletterSubmit(e: React.FormEvent<HTMLFormElement>) {
+//   e.preventDefault();
 
-  const form = e.currentTarget;
-  const emailField = form.elements.namedItem("email");
+//   const form = e.currentTarget;
+//   const emailField = form.elements.namedItem("email");
 
-  if (!(emailField instanceof HTMLInputElement)) {
-    toast.error("Nie udało się odczytać adresu e-mail.");
-    return;
-  }
+//   if (!(emailField instanceof HTMLInputElement)) {
+//     toast.error("Nie udało się odczytać adresu e-mail.");
+//     return;
+//   }
 
-  const email = emailField.value;
+//   const email = emailField.value;
 
-  try {
-    const result = await subscribeToNewsletter(email);
+//   try {
+//     const result = await subscribeToNewsletter(email);
 
-    toast.success("Zapisano do newslettera!", {
-      description: result.message || "Dziękujemy za dołączenie do Investia.Tech",
-      style: {
-        background: "#22C55E",
-        color: "white",
-        fontSize: "16px",
-        padding: "18px 20px",
-        borderRadius: "12px",
-      },
-    });
+//     toast.success("Zapisano do newslettera!", {
+//       description: result.message || "Dziękujemy za dołączenie do Investia.Tech",
+//       style: {
+//         background: "#22C55E",
+//         color: "white",
+//         fontSize: "16px",
+//         padding: "18px 20px",
+//         borderRadius: "12px",
+//       },
+//     });
 
-    form.reset();
-  } catch (error: any) {
-    toast.error("Nie udało się zapisać.", {
-      description: error.message ?? "Spróbuj ponownie później.",
-    });
-  }
-}
+//     form.reset();
+//   } catch (error: any) {
+//     toast.error("Nie udało się zapisać.", {
+//       description: error.message ?? "Spróbuj ponownie później.",
+//     });
+//   }
+// }
 
 export default function Home() {
   return (
@@ -1102,7 +1104,7 @@ export default function Home() {
                   Masz pytania? Wypełnij formularz, a odpowiemy najszybciej jak to możliwe.
                 </p>
               </div>
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleContactSubmit}>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label htmlFor="name" className="text-sm font-medium">

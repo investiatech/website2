@@ -4,6 +4,7 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
+import { handleContactSubmit } from '../lib/handleContactSubmit'
 
 export default function ContactPage() {
     return (
@@ -34,7 +35,7 @@ export default function ContactPage() {
                                 {/* Contact Form */}
                                 <div>
                                     <h2 className="text-2xl font-semibold mb-6">Wyślij wiadomość</h2>
-                                    <form className="space-y-6">
+                                    <form className="space-y-6" onSubmit={handleContactSubmit}>
                                         <div className="space-y-2">
                                             <label htmlFor="name" className="text-sm font-medium">
                                                 Imię i nazwisko
