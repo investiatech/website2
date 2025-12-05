@@ -30,8 +30,8 @@ export function Header() {
           <Link href="/blog" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
             Artykuły
           </Link>
-          <Link href="/webinars" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-            Webinary
+          <Link href="/#newsletter" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            Newsletter
           </Link>
           <Link href="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
             O nas
@@ -76,11 +76,11 @@ export function Header() {
                 Artykuły
               </Link>
               <Link
-                href="/webinars"
+                href="/#newsletter"
                 className="text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded-md transition-colors py-2 px-4"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Webinary
+                Newsletter
               </Link>
               <Link
                 href="/about"

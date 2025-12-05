@@ -10,6 +10,10 @@ import { Calendar, Code, Lightbulb, TrendingUp, Video, Zap } from 'lucide-react'
 import { Input } from '@/components/ui/input'
 import { BlogPost } from '../lib/blog-data'
 
+import { toast } from 'sonner'
+import { subscribeToNewsletter } from '../lib/newsletter'
+import { quickInsights } from "@/app/lib/quickInsights";
+
 export default function BlogPage() {
     const [blogPosts, setBlogPosts] = useState<BlogPost[]>([])
     const [loading, setLoading] = useState(true)
@@ -81,28 +85,40 @@ export default function BlogPage() {
         [blogPosts]
     )
 
-    const quickInsights = [
-        {
-            icon: Zap,
-            title: "React Server Components",
-            tip: "Renderuj komponenty na serwerze, aby zmniejszyć rozmiar bundle o 30-40%.",
-        },
-        {
-            icon: Code,
-            title: "TypeScript Strict Mode",
-            tip: "Włącz strict mode od początku projektu – łatwiej naprawić 10 błędów niż 1000.",
-        },
-        {
-            icon: TrendingUp,
-            title: "Edge Computing",
-            tip: "Przenieś logikę bliżej użytkownika – Edge Functions redukują latencję o 50%.",
-        },
-        {
-            icon: Lightbulb,
-            title: "CSS-in-JS Performance",
-            tip: "Rozważ TailwindCSS zamiast CSS-in-JS – mniejszy runtime overhead i lepszy DX.",
-        },
-    ]
+    async function handleNewsletterSubmit(e: React.FormEvent<HTMLFormElement>) {
+        e.preventDefault();
+
+        const form = e.currentTarget;
+        const emailField = form.elements.namedItem("email");
+
+        if (!(emailField instanceof HTMLInputElement)) {
+            toast.error("Nie udało się odczytać adresu e-mail.");
+            return;
+        }
+
+        const email = emailField.value;
+
+        try {
+            const result = await subscribeToNewsletter(email);
+
+            toast.success("Zapisano do newslettera!", {
+                description: result.message || "Dziękujemy za dołączenie do Investia.Tech",
+                style: {
+                    background: "#22C55E",
+                    color: "white",
+                    fontSize: "16px",
+                    padding: "18px 20px",
+                    borderRadius: "12px",
+                },
+            });
+
+            form.reset();
+        } catch (error: any) {
+            toast.error("Nie udało się zapisać.", {
+                description: error.message ?? "Spróbuj ponownie później.",
+            });
+        }
+    }
 
     return (
         <>
@@ -220,8 +236,8 @@ export default function BlogPage() {
                             <p className="text-lg text-muted-foreground mb-8">
                                 Zapisz się do newslettera i otrzymuj najnowsze artykuły bezpośrednio na swoją skrzynkę
                             </p>
-                            <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                                <Input type="email" placeholder="Twój adres email" className="flex-1" />
+                            <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto" onSubmit={handleNewsletterSubmit}>
+                                <Input name="email" type="email" placeholder="Twój adres email" className="flex-1" />
                                 <Button type="submit">Zapisz się</Button>
                             </form>
                         </div>
