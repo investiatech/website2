@@ -1,10 +1,11 @@
 export async function sendContactMessage(data: {
     name: string;
     email: string;
+    phone: string;
     subject: string;
     message: string;
 }) {
-    const response = await fetch("http://localhost:8875/contact", {
+    const response = await fetch("http://investia.tech:8891/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),

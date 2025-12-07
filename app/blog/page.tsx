@@ -29,7 +29,7 @@ export default function BlogPage() {
                 setLoading(true)
                 setError(null)
 
-                const response = await fetch("http://localhost:8085/post/all", {
+                const response = await fetch("http://localhost:8090/post/all", {
                     method: "GET",
                     headers: { "Accept": "application/json" },
                     signal: controller.signal,

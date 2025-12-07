@@ -40,7 +40,7 @@ export default function SolutionAreasPage() {
 
                                 <div className="space-y-4 mb-8">
                                     <div className="flex items-start gap-3">
-                                        <Check className="size-5 text-primary mt-1 flex-shrink-0" />
+                                        <Check className="size-5 text-primary mt-1 shrink-0" />
                                         <div>
                                             <h3 className="font-semibold mb-1">Automatyczne księgowanie</h3>
                                             <p className="text-sm text-muted-foreground">
@@ -49,7 +49,7 @@ export default function SolutionAreasPage() {
                                         </div>
                                     </div>
                                     <div className="flex items-start gap-3">
-                                        <Check className="size-5 text-primary mt-1 flex-shrink-0" />
+                                        <Check className="size-5 text-primary mt-1 shrink-0" />
                                         <div>
                                             <h3 className="font-semibold mb-1">Workflow finansowy</h3>
                                             <p className="text-sm text-muted-foreground">
@@ -58,7 +58,7 @@ export default function SolutionAreasPage() {
                                         </div>
                                     </div>
                                     <div className="flex items-start gap-3">
-                                        <Check className="size-5 text-primary mt-1 flex-shrink-0" />
+                                        <Check className="size-5 text-primary mt-1 shrink-0" />
                                         <div>
                                             <h3 className="font-semibold mb-1">Zarządzanie płatnościami</h3>
                                             <p className="text-sm text-muted-foreground">
@@ -67,7 +67,7 @@ export default function SolutionAreasPage() {
                                         </div>
                                     </div>
                                     <div className="flex items-start gap-3">
-                                        <Check className="size-5 text-primary mt-1 flex-shrink-0" />
+                                        <Check className="size-5 text-primary mt-1 shrink-0" />
                                         <div>
                                             <h3 className="font-semibold mb-1">Compliance monitoring</h3>
                                             <p className="text-sm text-muted-foreground">
@@ -128,7 +128,7 @@ export default function SolutionAreasPage() {
 
                                 <div className="space-y-4 mb-8">
                                     <div className="flex items-start gap-3">
-                                        <Check className="size-5 text-primary mt-1 flex-shrink-0" />
+                                        <Check className="size-5 text-primary mt-1 shrink-0" />
                                         <div>
                                             <h3 className="font-semibold mb-1">Real-time analytics</h3>
                                             <p className="text-sm text-muted-foreground">
@@ -137,7 +137,7 @@ export default function SolutionAreasPage() {
                                         </div>
                                     </div>
                                     <div className="flex items-start gap-3">
-                                        <Check className="size-5 text-primary mt-1 flex-shrink-0" />
+                                        <Check className="size-5 text-primary mt-1 shrink-0" />
                                         <div>
                                             <h3 className="font-semibold mb-1">Interaktywne wizualizacje</h3>
                                             <p className="text-sm text-muted-foreground">
@@ -146,7 +146,7 @@ export default function SolutionAreasPage() {
                                         </div>
                                     </div>
                                     <div className="flex items-start gap-3">
-                                        <Check className="size-5 text-primary mt-1 flex-shrink-0" />
+                                        <Check className="size-5 text-primary mt-1 shrink-0" />
                                         <div>
                                             <h3 className="font-semibold mb-1">Raporty automatyczne</h3>
                                             <p className="text-sm text-muted-foreground">
@@ -155,7 +155,7 @@ export default function SolutionAreasPage() {
                                         </div>
                                     </div>
                                     <div className="flex items-start gap-3">
-                                        <Check className="size-5 text-primary mt-1 flex-shrink-0" />
+                                        <Check className="size-5 text-primary mt-1 shrink-0" />
                                         <div>
                                             <h3 className="font-semibold mb-1">Predykcje i prognozy</h3>
                                             <p className="text-sm text-muted-foreground">AI-powered forecasting dla przewidywania trendów</p>
@@ -216,7 +216,7 @@ export default function SolutionAreasPage() {
 
                                 <div className="space-y-4 mb-8">
                                     <div className="flex items-start gap-3">
-                                        <Check className="size-5 text-primary mt-1 flex-shrink-0" />
+                                        <Check className="size-5 text-primary mt-1 shrink-0" />
                                         <div>
                                             <h3 className="font-semibold mb-1">Open Banking API</h3>
                                             <p className="text-sm text-muted-foreground">
@@ -225,14 +225,14 @@ export default function SolutionAreasPage() {
                                         </div>
                                     </div>
                                     <div className="flex items-start gap-3">
-                                        <Check className="size-5 text-primary mt-1 flex-shrink-0" />
+                                        <Check className="size-5 text-primary mt-1 shrink-0" />
                                         <div>
                                             <h3 className="font-semibold mb-1">Platformy maklerskie</h3>
                                             <p className="text-sm text-muted-foreground">Integracje z Interactive Brokers, Trading212, XTB</p>
                                         </div>
                                     </div>
                                     <div className="flex items-start gap-3">
-                                        <Check className="size-5 text-primary mt-1 flex-shrink-0" />
+                                        <Check className="size-5 text-primary mt-1 shrink-0" />
                                         <div>
                                             <h3 className="font-semibold mb-1">Market data feeds</h3>
                                             <p className="text-sm text-muted-foreground">
@@ -241,7 +241,7 @@ export default function SolutionAreasPage() {
                                         </div>
                                     </div>
                                     <div className="flex items-start gap-3">
-                                        <Check className="size-5 text-primary mt-1 flex-shrink-0" />
+                                        <Check className="size-5 text-primary mt-1 shrink-0" />
                                         <div>
                                             <h3 className="font-semibold mb-1">Payment gateways</h3>
                                             <p className="text-sm text-muted-foreground">
@@ -302,7 +302,7 @@ export default function SolutionAreasPage() {
 
                                 <div className="space-y-4 mb-8">
                                     <div className="flex items-start gap-3">
-                                        <Check className="size-5 text-primary mt-1 flex-shrink-0" />
+                                        <Check className="size-5 text-primary mt-1 shrink-0" />
                                         <div>
                                             <h3 className="font-semibold mb-1">Portfolio management</h3>
                                             <p className="text-sm text-muted-foreground">
@@ -311,7 +311,7 @@ export default function SolutionAreasPage() {
                                         </div>
                                     </div>
                                     <div className="flex items-start gap-3">
-                                        <Check className="size-5 text-primary mt-1 flex-shrink-0" />
+                                        <Check className="size-5 text-primary mt-1 shrink-0" />
                                         <div>
                                             <h3 className="font-semibold mb-1">Trading platforms</h3>
                                             <p className="text-sm text-muted-foreground">
@@ -320,7 +320,7 @@ export default function SolutionAreasPage() {
                                         </div>
                                     </div>
                                     <div className="flex items-start gap-3">
-                                        <Check className="size-5 text-primary mt-1 flex-shrink-0" />
+                                        <Check className="size-5 text-primary mt-1 shrink-0" />
                                         <div>
                                             <h3 className="font-semibold mb-1">Robo-advisory</h3>
                                             <p className="text-sm text-muted-foreground">
@@ -329,7 +329,7 @@ export default function SolutionAreasPage() {
                                         </div>
                                     </div>
                                     <div className="flex items-start gap-3">
-                                        <Check className="size-5 text-primary mt-1 flex-shrink-0" />
+                                        <Check className="size-5 text-primary mt-1 shrink-0" />
                                         <div>
                                             <h3 className="font-semibold mb-1">Risk management</h3>
                                             <p className="text-sm text-muted-foreground">
@@ -393,7 +393,7 @@ export default function SolutionAreasPage() {
                                 </Link>
                             </Button>
                             <Button size="lg" variant="outline" asChild>
-                                <Link href="/pricing">Zobacz cennik</Link>
+                                <Link href="/services">Zobacz usługi</Link>
                             </Button>
                         </div>
                     </div>

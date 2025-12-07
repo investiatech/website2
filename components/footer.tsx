@@ -65,7 +65,7 @@ export function Footer() {
           <div>
             <h3 className="font-semibold mb-4">Społeczność</h3>
             <div className="flex gap-4">
-              <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+              <a href="https://github.com/investiatech" className="text-muted-foreground hover:text-foreground transition-colors">
                 <Github className="size-5" />
                 <span className="sr-only">GitHub</span>
               </a>
@@ -77,7 +77,7 @@ export function Footer() {
                 <Linkedin className="size-5" />
                 <span className="sr-only">LinkedIn</span>
               </a>
-              <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+              <a href="https://www.youtube.com/channel/UC_k-79_sxrYS6pIRiKW3YEQ" className="text-muted-foreground hover:text-foreground transition-colors">
                 <Youtube className="size-5" />
                 <span className="sr-only">YouTube</span>
               </a>

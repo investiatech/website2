@@ -44,7 +44,7 @@ export default function ContactPage() {
                                                 id="name"
                                                 type="text"
                                                 placeholder="Jan Kowalski"
-                                                required
+                                                // required
                                             />
                                         </div>
 
@@ -79,7 +79,7 @@ export default function ContactPage() {
                                                 id="subject"
                                                 type="text"
                                                 placeholder="Zapytanie o współpracę"
-                                                required
+                                                // required
                                             />
                                         </div>
 

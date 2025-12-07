@@ -13,16 +13,17 @@ export async function handleContactSubmit(
 
     const name = (form.elements.namedItem("name") as HTMLInputElement)?.value;
     const email = (form.elements.namedItem("email") as HTMLInputElement)?.value;
+    const phone = (form.elements.namedItem("phone") as HTMLInputElement)?.value;
     const subject = (form.elements.namedItem("subject") as HTMLInputElement)?.value;
     const message = (form.elements.namedItem("message") as HTMLTextAreaElement)?.value;
 
-    if (!name || !email || !subject || !message) {
-        toast.error("Uzupełnij wszystkie pola.");
+    if (!email || !message) {
+        toast.error("Uzupełnij wymagane pola email oraz wiadomość.");
         return;
     }
 
     try {
-        const result = await sendContactMessage({ name, email, subject, message });
+        const result = await sendContactMessage({ name, email, phone, subject, message });
 
         toast.success("Wiadomość wysłana!", {
             description: result.message || "Dziękujemy za kontakt — odpowiemy wkrótce.",
