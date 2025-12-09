@@ -14,6 +14,8 @@ import { toast } from 'sonner'
 import { subscribeToNewsletter } from '../lib/subscribeToNewsletter'
 import { quickInsights } from "@/app/lib/quickInsights";
 import { handleNewsletterSubmit } from '../lib/handleNewsletterSubmit'
+import { fetchPosts } from '../lib/fetchPost'
+
 
 export default function BlogPage() {
     const [blogPosts, setBlogPosts] = useState<BlogPost[]>([])
@@ -24,25 +26,12 @@ export default function BlogPage() {
         let cancelled = false
         const controller = new AbortController()
 
-        const fetchPosts = async () => {
+        const loadPosts = async () => {
             try {
                 setLoading(true)
                 setError(null)
 
-                const response = await fetch("https://investia.tech:8890/post/all", {
-                    method: "GET",
-                    headers: { "Accept": "application/json" },
-                    signal: controller.signal,
-                })
-
-                if (!response.ok) {
-                    const text = await response.text().catch(() => "")
-                    throw new Error(
-                        text || `Failed to fetch blog posts (status: ${response.status})`,
-                    )
-                }
-
-                const data = await response.json()
+                const data = await fetchPosts(controller.signal)
 
                 if (!cancelled) {
                     setBlogPosts(data)
@@ -60,13 +49,61 @@ export default function BlogPage() {
             }
         }
 
-        fetchPosts()
+        loadPosts()
 
         return () => {
             cancelled = true
             controller.abort()
         }
     }, [])
+
+    // useEffect(() => {
+    //     let cancelled = false
+    //     const controller = new AbortController()
+
+    //     const fetchPosts = async () => {
+    //         try {
+    //             setLoading(true)
+    //             setError(null)
+
+    //             const response = await fetch("https://investia.tech:8890/post/all", {
+    //                 method: "GET",
+    //                 headers: { "Accept": "application/json" },
+    //                 signal: controller.signal,
+    //             })
+
+    //             if (!response.ok) {
+    //                 const text = await response.text().catch(() => "")
+    //                 throw new Error(
+    //                     text || `Failed to fetch blog posts (status: ${response.status})`,
+    //                 )
+    //             }
+
+    //             const data = await response.json()
+
+    //             if (!cancelled) {
+    //                 setBlogPosts(data)
+    //             }
+    //         } catch (err) {
+    //             if (cancelled) return
+    //             if (err instanceof DOMException && err.name === "AbortError") return
+
+    //             console.error("[v0] Error fetching blog posts:", err)
+    //             setError(err instanceof Error ? err.message : "An error occurred")
+    //         } finally {
+    //             if (!cancelled) {
+    //                 setLoading(false)
+    //             }
+    //         }
+    //     }
+
+    //     fetchPosts()
+
+    //     return () => {
+    //         cancelled = true
+    //         controller.abort()
+    //     }
+    // }, [])
 
     const postsByDay = useMemo(
         () =>
@@ -164,7 +201,7 @@ export default function BlogPage() {
                             <div className="text-center py-12">
                                 <p className="text-red-500">Błąd: {error}</p>
                                 <p className="text-sm text-muted-foreground mt-2">
-                                    Sprawdź czy API jest dostępne pod adresem https://localhost:8085/post/all
+                                    Api jest niedostępne. Spróbuj za chwilę.
                                 </p>
                             </div>
                         )}
