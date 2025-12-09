@@ -29,7 +29,7 @@ export default function BlogPage() {
                 setLoading(true)
                 setError(null)
 
-                const response = await fetch("http://localhost:8090/post/all", {
+                const response = await fetch("https://investia.tech:8890/post/all", {
                     method: "GET",
                     headers: { "Accept": "application/json" },
                     signal: controller.signal,
@@ -72,7 +72,7 @@ export default function BlogPage() {
         () =>
             Object.entries(
                 blogPosts.reduce((acc, post) => {
-                    const dateKey = post.date // np. "2025-01-15"
+                    const dateKey = post.date
 
                     if (!acc[dateKey]) {
                         acc[dateKey] = []

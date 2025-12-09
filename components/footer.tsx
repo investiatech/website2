@@ -77,7 +77,7 @@ export function Footer() {
                 <Linkedin className="size-5" />
                 <span className="sr-only">LinkedIn</span>
               </a>
-              <a href="https://www.youtube.com/channel/UC_k-79_sxrYS6pIRiKW3YEQ" className="text-muted-foreground hover:text-foreground transition-colors">
+              <a href="www.youtube.com/@investia_tech" className="text-muted-foreground hover:text-foreground transition-colors">
                 <Youtube className="size-5" />
                 <span className="sr-only">YouTube</span>
               </a>

@@ -9,7 +9,7 @@ import { BlogPost } from '@/app/lib/blog-data'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:8085'
+const API_URL = process.env.NEXT_PUBLIC_API_URL ?? 'https://investia.tech:8890'
 
 async function getPostBySlug(slug: string): Promise<BlogPost | null> {
     const res = await fetch(`${API_URL}/post/${slug}`, {
