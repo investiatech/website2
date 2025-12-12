@@ -1,7 +1,7 @@
 import type { BlogPost } from "./blog-data"
 
 export async function fetchPosts(signal?: AbortSignal): Promise<BlogPost[]> {
-    const response = await fetch("/api/post/all", {
+    const response = await fetch("https://investia.tech/api/post/all", {
         method: "GET",
         headers: { Accept: "application/json" },
         signal,

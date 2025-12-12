@@ -1,7 +1,7 @@
 import type { BlogPost } from "./blog-data"
 
 export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
-  const res = await fetch(`/api/post/${slug}`, {
+  const res = await fetch(`https://investia.tech/api/post/${slug}`, {
     cache: "no-store",
   })
 
