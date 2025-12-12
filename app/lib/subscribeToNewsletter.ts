@@ -1,5 +1,5 @@
 export async function subscribeToNewsletter(email: string) {
-    const response = await fetch("https://investia.tech/api/newsletter", {
+    const response = await fetch("/api/newsletter", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
