@@ -5,7 +5,7 @@ export async function sendContactMessage(data: {
     subject: string;
     message: string;
 }) {
-    const response = await fetch("http://investia.tech:8891/contact", {
+    const response = await fetch("http://investia.tech/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
