@@ -14,7 +14,7 @@ export async function sendContactMessage(data: {
     const res = await response.json();
 
     if (!response.ok) {
-        throw new Error(res.message || "Nie udało się wysłać wiadomości.");
+        throw new Error(res.message || "Przepraszamy. Nie udało się wysłać wiadomości.");
     }
 
     return res;
