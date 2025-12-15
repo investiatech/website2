@@ -21,7 +21,7 @@ export default function Home() {
         {/* Hero Section */}
         <section className="container mx-auto px-4 py-24 md:py-32">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
-            <div className="relative aspect-square lg:aspect-auto lg:h-[500px] rounded-lg overflow-hidden">
+            <div className="relative aspect-square lg:aspect-auto lg:h-125 rounded-lg overflow-hidden">
               <Image
                 src="/images/investia.tech_hero.svg"
                 alt="Zespół projektujący algorytmy i oprogramowanie dla nowoczesnych finansów"

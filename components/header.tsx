@@ -1,8 +1,10 @@
 "use client"
 
 import Link from "next/link"
-import { Code2, Menu, X, ChevronDown } from "lucide-react"
+import { Code2, Menu, X, ChevronDown, ArrowRight } from "lucide-react"
 import { useState } from "react"
+import { Button } from "./ui/button"
+import Image from 'next/image'
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -15,8 +17,15 @@ export function Header() {
   return (
     <header className="border-b border-border sticky top-0 bg-background z-50">
       <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
+
         <Link href="/" className="flex items-center gap-2 font-semibold text-lg">
-          <Code2 className="size-6" />
+          <Image
+            src="/images/investia.tech_logo.png"
+            alt="Investia.Tech logo"
+            width={48}
+            height={48}
+            className="rounded-full object-cover"
+          />
           <span>Investia.Tech</span>
         </Link>
 
@@ -39,11 +48,18 @@ export function Header() {
           <Link href="/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
             Kontakt
           </Link>
+          <Button asChild className="ml-4 hidden md:inline-flex">
+            <Link href="/contact">
+              Zrealizuj Swój pomysł
+              <ArrowRight className="size-4 ml-2" />
+            </Link>
+          </Button>
         </div>
 
         <button className="md:hidden p-2" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle menu">
           {mobileMenuOpen ? <X className="size-6" /> : <Menu className="size-6" />}
         </button>
+
       </nav>
 
       {mobileMenuOpen && (
